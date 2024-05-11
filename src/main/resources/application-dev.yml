@@ -1,0 +1,41 @@
+broker-routes:
+  domain: localhost
+
+ms-settings:
+  port: 8010
+  path: /api/v1/settings
+  complete-path: http://${broker-routes.domain}:${ms-settings.port}
+
+ms-document:
+  port: 8012
+  path: /api/v1/document-manager
+  complete-path: http://${broker-routes.domain}:${ms-document.port}
+
+ms-notification:
+  port: 8020
+  complete-path: http://${broker-routes.domain}:${ms-notification.port}
+  notification:
+    path: /api/v1/notification
+  template:
+    path: /api/v1/template
+
+ms-catalogs:
+  port: 8014
+  complete-path: http://${broker-routes.domain}:${ms-catalogs.port}
+  catalog:
+    path: /api/v1/catalog
+  catalog-item:
+    path: /api/v1/catalog-item
+  catalog-type:
+    path: /api/v1/catalog-type
+
+ms-sinu:
+  port: 8021
+  path: /api/v1/sinu
+  complete-path: http://${broker-routes.domain}:${ms-sinu.port}
+
+db-config:
+  domain: atenea.cfkwry6gcjvj.us-east-1.rds.amazonaws.com
+  name: atenea_programs
+  user: atenea_usr
+  password: 4Zn!UDBrgKt8J#sT
